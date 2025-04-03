@@ -14,7 +14,7 @@
 •🚪Sair do sistema de ouvidoria de forma segura.
 '''
 from operacoesbd_english import *
-conn = createConnection ('127.0.0.1', 'root', '99998888', 'ouvidoria_project')
+conn = createConnection ('127.0.0.1', 'root', 'suasenha', 'ouvidoria_project')
 option = -1
 manifestation = listDataBase(conn, 'select * from manifestation')
  
