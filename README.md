@@ -2,7 +2,7 @@
 
 Bem-vindo ao Projeto-2-Ouvidoria! Este sistema foi desenvolvido para facilitar a coleta de manifestações dos clientes, permitindo o registro de reclamações, sugestões e elogios de forma prática e eficiente.
 
-**•✨ Funcionalidades:**
+**✨ Funcionalidades:**
 
 •📌 Registrar reclamações, sugestões e elogios;
 
