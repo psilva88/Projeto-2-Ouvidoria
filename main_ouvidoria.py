@@ -21,7 +21,7 @@ manifestation = listDataBase(conn, 'select * from manifestation')
 print("Bem-vindo a ouvidoria da Universidade XYZ, na qual sua voz é importante!")
 
 while option != 6:
-    option = int(input("\n Selecione uma das opções abaixo: \n 1) Listagem das Manifestações \n 2) Criar uma nova Manifestação \n 3) Exibir quantidade de manifestações \n 4) Pesquisar uma manifestação por código \n 5) Excluir uma manifestação por código \n 6) Sair do Sistema\n"))
+    option = int(input("\n Selecione uma das opções abaixo: \n 1) 🔍Listagem das Manifestações \n 2) 📂Listagem de manifestações filtradas por tipo \n 3) ➕Criar uma nova manifestação \n 4) 📊Exibir a quantidade total de manifestações \n 5) 🔎Pesquisar uma manifestação através do código \n 6) 🗑️Excluir uma manifestação pelo código \n 7) 🚪Sair do sistema"))
     
     if option == 1:
         consultationListManifestations = "select * from manifestation"
