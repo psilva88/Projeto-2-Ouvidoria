@@ -1,16 +1,24 @@
 '''
-1) Listagem das Manifestações
-2) Criar uma nova Manifestação
-3) Exibir quantidade de manifestações
-4) Pesquisar uma manifestação por código 
-5) Sair do Sistema
+•🔍Listagem de todas as manifestações registradas;
+
+•📂Listagem de manifestações filtradas por tipo (reclamação, sugestão ou elogio);
+
+•➕Criar uma nova manifestação e armazená-la no sistema;
+
+•📊Exibir a quantidade total de manifestações registradas;
+
+•🔎Pesquisar uma manifestação específica através do código único;
+
+•🗑️Excluir uma manifestação pelo código de identificação;
+
+•🚪Sair do sistema de ouvidoria de forma segura.
 '''
 from operacoesbd import *
 conn = createConnection('localhost', 'root', '@mysqlberna2006', 'ouvidoria_project')
 option = -1
 manifestation = listDataBase(conn, 'select * from manifestation')
 
-print("Bem vindo a ouvidoria da Universidade XYZ, na qual sua voz é importante!")
+print("Bem-vindo a ouvidoria da Universidade XYZ, na qual sua voz é importante!")
 
 while option != 6:
     option = int(input("\n Selecione uma das opções abaixo: \n 1) Listagem das Manifestações \n 2) Criar uma nova Manifestação \n 3) Exibir quantidade de manifestações \n 4) Pesquisar uma manifestação por código \n 5) Excluir uma manifestação por código \n 6) Sair do Sistema\n"))
