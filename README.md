@@ -1,4 +1,13 @@
-# Projeto-2-Ouvidoria
-Este projeto tem como objetivo criar um sistema de Ouvidoria, permitindo que os clientes registrem suas manifestações de forma simples e eficiente. Os usuários poderão enviar reclamações, sugestões e elogios, garantindo um canal direto de comunicação para melhorias e feedbacks.
+📢 Projeto-2-Ouvidoria
 
-A aplicação busca proporcionar uma interface intuitiva e acessível, armazenando e organizando as manifestações recebidas.
+Bem-vindo ao Projeto-2-Ouvidoria! Este sistema foi desenvolvido para facilitar a coleta de manifestações dos clientes, permitindo o registro de reclamações, sugestões e elogios de forma prática e eficiente.
+
+•✨ Funcionalidades
+
+•📌 Registrar reclamações, sugestões e elogios;
+
+•🔍 Consultar manifestações registradas;
+
+•🛠️ Interface intuitiva e acessível;
+
+•📊 Análise das informações para melhoria contínua.
