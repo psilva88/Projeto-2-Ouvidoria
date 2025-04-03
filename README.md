@@ -4,18 +4,16 @@ Bem-vindo ao Projeto-2-Ouvidoria! Este sistema foi desenvolvido para facilitar a
 
 **✨ Funcionalidades:**
 
-•📌 Registrar reclamações, sugestões e elogios;
+•🔍Listagem de todas as manifestações registradas;
 
-•🔍 Listagem de todas as manifestações registradas;
+•📂Listagem de manifestações filtradas por tipo (reclamação, sugestão ou elogio);
 
-•📂 Listagem de manifestações filtradas por tipo (reclamação, sugestão ou elogio);
+•➕Criar uma nova manifestação e armazená-la no sistema;
 
-•➕ Criar uma nova manifestação e armazená-la no sistema;
+•📊Exibir a quantidade total de manifestações registradas;
 
-•📊 Exibir a quantidade total de manifestações registradas;
+•🔎Pesquisar uma manifestação específica através do código único;
 
-•🔎 Pesquisar uma manifestação específica através do código único;
+•🗑️Excluir uma manifestação pelo código de identificação;
 
-•🗑️ Excluir uma manifestação pelo código de identificação;
-
-•🚪 Sair do sistema de ouvidoria de forma segura.
+•🚪Sair do sistema de ouvidoria de forma segura.
