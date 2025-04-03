@@ -13,7 +13,7 @@
 
 •🚪Sair do sistema de ouvidoria de forma segura.
 '''
-from operacoesbd import *
+from operacoesbd_english import *
 conn = createConnection('localhost', 'root', '@mysqlberna2006', 'ouvidoria_project')
 option = -1
 manifestation = listDataBase(conn, 'select * from manifestation')
