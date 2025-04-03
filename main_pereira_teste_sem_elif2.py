@@ -23,7 +23,7 @@ seunome = input("Por favor, digite seu nome: ")
 print(f"Olá {seunome}, o que você gostaria de fazer?")
 
 while option != 7:
-    option = int(input("\n Selecione uma das opções abaixo: \n 1) 🔍Listagem das Manifestações \n 2) 📂Listagem de manifestações filtradas por tipo \n 3) ➕Criar uma nova manifestação \n 4) 📊Exibir a quantidade total de manifestações \n 5) 🔎Pesquisar uma manifestação através do código \n 6) 🗑️Excluir uma manifestação pelo código \n 7) 🚪Sair do sistema \n" ))
+    option = int(input("\n Selecione uma das opções abaixo: \n 1) 🔍Listagem das Manifestações \n 2) 📂Listagem das manifestações filtradas por tipo \n 3) ➕Criar uma nova manifestação \n 4) 📊Exibir a quantidade total de manifestações \n 5) 🔎Pesquisar uma manifestação através do código \n 6) 🗑️Excluir uma manifestação pelo código \n 7) 🚪Sair do sistema \n" ))
     
     if option == 1:
         consultationListManifestations = "select * from manifestation"
