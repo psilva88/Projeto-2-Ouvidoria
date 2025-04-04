@@ -1,4 +1,4 @@
-from operacoesbd_english_cirugia import *
+from operacoesbd_english import *
 
 def opcao1(conn):
         consultationListManifestations = "select * from manifestation"
