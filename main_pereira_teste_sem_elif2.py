@@ -13,8 +13,8 @@
 
 •🚪Sair do sistema de ouvidoria de forma segura.
 '''
-from operacoesbd_english import *
-conn = createConnection ('127.0.0.1', 'root', 'suasenha', 'ouvidoria_project')
+from operacoesbd_english_cirugia import *
+conn = createConnection ('127.0.0.1', 'root', '99998888', 'ouvidoria_project')
 option = -1
 manifestation = listDataBase(conn, 'select * from manifestation')
  
@@ -24,6 +24,7 @@ print(f"Olá {seunome}, o que você gostaria de fazer?")
 
 while option != 7:
     option = int(input("\n Selecione uma das opções abaixo: \n 1) 🔍 Listagem das Manifestações \n 2) 📂 Listagem das manifestações filtradas por tipo \n 3) ➕ Criar uma nova manifestação \n 4) 📊 Exibir a quantidade total de manifestações \n 5) 🔎 Pesquisar uma manifestação através do código \n 6) 🗑️  Excluir uma manifestação pelo código \n 7) 🚪 Sair do sistema \n" ))
+    
     
     if option == 1:
         consultationListManifestations = "select * from manifestation"
@@ -71,17 +72,25 @@ while option != 7:
 
     
     elif option == 5:
-        while True:
-            searchManifestation = int(input("Digite o código da manifestação que deseja encontrar: "))
-            data = [ searchManifestation ]
-            consultationSearch = "select * from manifestation where codigo = %s"
-            manifestation = listDataBase(conn, consultationSearch, data)
-            if len(manifestation) == 0 or searchManifestation < 1:
-                searchManifestation = int(input("Manifestação não encontrada, tente novamente: "))
-                print("Manifestação não encontrada, tente novamente!")
-            else:
-                print(f"Manifestação encontrada: -{manifestation [0][1]}")
-                break
+        consultationListManifestations = "select count(*) from manifestation"
+        resultado = listDataBase(conn, consultationListManifestations)
+        quantidade = resultado[0][0]
+
+        if quantidade == 0:
+            print("Não há manifestações cadastradas no sistema.")
+        else:
+            while True:
+                searchManifestation = int(input("Digite o código da manifestação que deseja encontrar: "))
+                data = [ searchManifestation ]
+                consultationSearch = "select * from manifestation where codigo = %s"
+                manifestation = listDataBase(conn, consultationSearch, data)
+
+                if len(manifestation) == 0 or searchManifestation < 1:
+                    print("Manifestação não encontrada, tente novamente!")
+                else:
+                    print(f"Manifestação encontrada: {manifestation[0][1]}")
+                    break
+
 
     elif option == 6:
         while True:
