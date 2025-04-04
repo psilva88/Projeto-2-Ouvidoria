@@ -55,10 +55,8 @@ def opcao3(conn):
         data = [typeChoose, newManifestation]
         insertInDataBase(conn, insertConsultation, data)
 
-        cursor = conn.cursor()
-        cursor.execute("SELECT LAST_INSERT_ID()")
-        position = cursor.fetchone()[0]
-        cursor.close()
+        consultaID = "SELECT LAST_INSERT_ID()"
+        position = listDataBase(conn, consultaID)[0][0]
 
         print(f"{typeChoose} cadastrada com sucesso! Seu código é: {position}")
 
