@@ -1,4 +1,4 @@
-from operacoesbd_english import *
+from operacoesbd_english_cirugia import *
 
 def opcao1(conn):
         consultationListManifestations = "select * from manifestation"
@@ -41,17 +41,24 @@ def opcao4(conn):
             print("Não há manifestações cadastradas no sistema.")
 
 def opcao5(conn):
-    while True:
-            searchManifestation = int(input("Digite o código da manifestação que deseja encontrar: "))
-            data = [ searchManifestation ]
-            consultationSearch = "select * from manifestation where codigo = %s"
-            manifestation = listDataBase(conn, consultationSearch, data)
-            if len(manifestation) == 0 or searchManifestation < 1:
-                searchManifestation = int(input("Manifestação não encontrada, tente novamente: "))
-                print("Manifestação não encontrada, tente novamente!")
-            else:
-                print(f"Manifestação encontrada: -{manifestation [0][1]}")
-                break
+        consultationListManifestations = "select count(*) from manifestation"
+        resultado = listDataBase(conn, consultationListManifestations)
+        quantidade = resultado[0][0]
+
+        if quantidade == 0:
+            print("Não há manifestações cadastradas no sistema.")
+        else:
+            while True:
+                searchManifestation = int(input("Digite o código da manifestação que deseja encontrar: "))
+                data = [ searchManifestation ]
+                consultationSearch = "select * from manifestation where codigo = %s"
+                manifestation = listDataBase(conn, consultationSearch, data)
+
+                if len(manifestation) == 0 or searchManifestation < 1:
+                    print("Manifestação não encontrada, tente novamente!")
+                else:
+                    print(f"Manifestação encontrada: {manifestation[0][1]}")
+                    break
 
 def opcao6(conn):
     while True:
