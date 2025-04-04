@@ -18,7 +18,7 @@ conn = createConnection ('127.0.0.1', 'root', 'suasenha', 'ouvidoria_project')
 option = -1
 manifestation = listDataBase(conn, 'select * from manifestation')
  
-rint("Bem-vindo a ouvidoria da Universidade XYZ, na qual sua voz é importante!")
+print("Bem-vindo a ouvidoria da Universidade XYZ, na qual sua voz é importante!")
 seunome = input("Por favor, digite seu nome usuário: ")
 print(f"Olá {seunome}, o que você gostaria de fazer?")
 
