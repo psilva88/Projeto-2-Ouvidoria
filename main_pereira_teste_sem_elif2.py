@@ -18,12 +18,12 @@ conn = createConnection ('127.0.0.1', 'root', 'suasenha', 'ouvidoria_project')
 option = -1
 manifestation = listDataBase(conn, 'select * from manifestation')
  
-print("Bem-vindo a ouvidoria da Universidade XYZ, na qual sua voz é importante!")
-seunome = input("Por favor, digite seu nome: ")
+rint("Bem-vindo a ouvidoria da Universidade XYZ, na qual sua voz é importante!")
+seunome = input("Por favor, digite seu nome usuário: ")
 print(f"Olá {seunome}, o que você gostaria de fazer?")
 
 while option != 7:
-    option = int(input("\n Selecione uma das opções abaixo: \n 1) 🔍 Listagem das Manifestações \n 2) 📂 Listagem das manifestações filtradas por tipo \n 3) ➕ Criar uma nova manifestação \n 4) 📊 Exibir a quantidade total de manifestações \n 5) 🔎 Pesquisar uma manifestação através do código \n 6) 🗑️ Excluir uma manifestação pelo código \n 7) 🚪 Sair do sistema \n" ))
+    option = int(input("\n Selecione uma das opções abaixo: \n 1) 🔍 Listagem das Manifestações \n 2) 📂 Listagem das manifestações filtradas por tipo \n 3) ➕ Criar uma nova manifestação \n 4) 📊 Exibir a quantidade total de manifestações \n 5) 🔎 Pesquisar uma manifestação através do código \n 6) 🗑️  Excluir uma manifestação pelo código \n 7) 🚪 Sair do sistema \n" ))
     
     if option == 1:
         consultationListManifestations = "select * from manifestation"
@@ -31,10 +31,15 @@ while option != 7:
         if len(manifestation) > 0:
             print("Aqui está as manifestações cadastradas: \n")
             for manifest in range(len(manifestation)):
-                print(f"{manifest+1} - {manifestation[manifest][1]}.")
+                print(f"Código da Manifestação: {manifestation[manifest][0]} - {manifestation[manifest][1]}.")
         else:
             print("Sem manifestações no sistema.")
-                
+
+
+    elif option == 2:
+        print("Por favor digite o tipo da sua manifestação: \n 1) 😡 Reclamação \n 2) 💡 Sugestão \n 3) 🌟 Elogio")
+        
+
 
     elif option == 3:
         newManifestation = input("Por favor digite a sua manifestação: ")
@@ -67,32 +72,31 @@ while option != 7:
     
     elif option == 5:
         while True:
-            searchManifestation = input("Digite o código da manifestação que deseja encontrar: ")
+            searchManifestation = int(input("Digite o código da manifestação que deseja encontrar: "))
             data = [ searchManifestation ]
             consultationSearch = "select * from manifestation where codigo = %s"
             manifestation = listDataBase(conn, consultationSearch, data)
-            if len(manifestation) == 0:
+            if len(manifestation) == 0 or searchManifestation < 1:
+                searchManifestation = int(input("Manifestação não encontrada, tente novamente: "))
                 print("Manifestação não encontrada, tente novamente!")
             else:
                 print(f"Manifestação encontrada: -{manifestation [0][1]}")
                 break
 
     elif option == 6:
-        manifestationCode = int(input("Digite o código da manifestação a remover: "))
         while True:
-            if manifestationCode < 1:
-                manifestationCode = int(input("Manifestação inválida. Por favor digite novamente uma manifestação válida: "))
-            elif manifestationCode >= 1:
+            deleteManifestation = int(input("Digite o código da manifestação que deseja excluir: "))
+            data = [ deleteManifestation ]
+            consultationDelete = "select * from manifestation where codigo = %s"
+            manifestation = listDataBase(conn, consultationDelete, data)
+            if len(manifestation) == 0 or deleteManifestation < 1:
+                deleteManifestation = int(input("Manifestação não encontrada, tente novamente: "))
+            else:
+                deleteConsultation = "delete from manifestation where codigo = %s"
+                deleteDataBase(conn, deleteConsultation, data)
+                print(f"Manifestação com o código {deleteManifestation} excluída com sucesso.")
                 break
-        removeConsultation = "delete from manifestation where codigo = %s"
-        dados = [ manifestationCode ]
-
-        changedLines = deleteDataBase(conn,removeConsultation,dados)
-        if changedLines == 0:
-                    print("Não existe manifestação para o código informado, tente novamente: ")
-        else:
-            print("Manifestação removida com sucesso!")
-        
+    
     elif option == 7:
         print (f"Agradecemos pelo uso {seunome}. ")
     
