@@ -1,5 +1,5 @@
 from mainmetodos import *
-from operacoesbd_english_cirugia import *
+from operacoesbd_english import *
 conn = createConnection ('127.0.0.1', 'root', 'xxxx', 'ouvidoria_project')
 option = -1
 manifestation = listDataBase(conn, 'select * from manifestation')
