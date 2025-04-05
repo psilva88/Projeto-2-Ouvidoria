@@ -72,10 +72,14 @@ while option != 7:
                 break
             else:
                 print("Opção inválida. Digite 1, 2 ou 3.")
-
-        newManifestation = input("Por favor, digite a sua manifestação: ").strip()
+        if tipo == "1":
+                newManifestation = input("Por favor, digite a sua reclamação: ").strip()
+        elif tipo == "2":
+                newManifestation = input("Por favor, digite a sua sugestão: ").strip()
+        elif tipo == "3":
+                newManifestation = input("Por favor, digite o seu elogio: ").strip()
         while len(newManifestation) < 1:
-            newManifestation = input("Manifestação inválida. Digite novamente: ").strip()
+                newManifestation = input("Manifestação inválida. Digite novamente: ").strip()
 
         insertConsultation = "INSERT INTO manifestation (tipo, manifestacao) VALUES (%s, %s)"
         data = [typeChoose, newManifestation]
