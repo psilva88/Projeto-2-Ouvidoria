@@ -1,4 +1,4 @@
-from mainmetodos import *
+from main_metodos_teste import *
 from operacoesbd_english import *
 conn = createConnection ('127.0.0.1', 'root', 'xxxx', 'ouvidoria_project')
 option = -1
