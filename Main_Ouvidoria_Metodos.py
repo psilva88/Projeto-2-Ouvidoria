@@ -117,4 +117,4 @@ def opcao6(conn):
                     break
 
 def opcao7(seunome):
-    print(f"👋 Obrigado por usar a ouvidoria, {seunome}!")
+    print(f"Obrigado por usar a ouvidoria, {seunome}!")
