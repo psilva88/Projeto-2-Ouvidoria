@@ -13,7 +13,7 @@
 
 •🚪Sair do sistema de ouvidoria de forma segura.
 '''
-from mainmetodos import *
+from Main_Ouvidoria_Metodos import *
 from operacoesbd_english import *
 conn = createConnection ('127.0.0.1', 'root', 'xxxx', 'ouvidoria_project')
 option = -1
