@@ -17,5 +17,3 @@ Bem-vindo a Ouvidoria! Este sistema foi desenvolvido para facilitar a coleta de 
 •🗑️Excluir uma manifestação pelo código de identificação;
 
 •🚪Sair do sistema de ouvidoria de forma segura.
-
-https://www.canva.com/design/DAG2ndRM2rU/mNAOJ6jNOQRpulcyBA64WA/edit?utm_content=DAG2ndRM2rU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
